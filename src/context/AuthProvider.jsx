@@ -29,10 +29,11 @@ const AuthProvider = ({ children }) => {
         setAuth(data);
         // navigate("/proyectos");
       } catch (error) {
+        console.log(error.response);
         setAuth({});
+      } finally {
+        setCargando(false);
       }
-
-      setCargando(false);
     };
 
     return () => {
